@@ -7,7 +7,7 @@ root = tree.getroot()
 data = ''
 
 for item in root.iter('property'):
-    new_value = f'{{{{ getv("/sevend2d/{item.attrib["name"]}", "{item.attrib["value"]}") }}}}'
+    new_value = f'{{{{ getv("/sevend2d/{item.attrib["name"].lower()}", "{item.attrib["value"]}") }}}}'
     item.attrib['value'] = new_value
 
 tree.write('serverconfig.xml.new', encoding="utf-8", xml_declaration=True)

@@ -17,9 +17,15 @@ app_update 294420
 quit
 EOF
 
-remco
-
 cd ${SEVEND2D_HOME}/server/
 sudo steamcmd +runscript ${SEVEND2D_HOME}/sevend2d.conf
+
+remco
+
+echo
+echo #####################################
+echo starting server...
+echo
+
 ./startserver.sh -configfile=serverconfig.xml
 

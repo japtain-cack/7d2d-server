@@ -3,114 +3,114 @@
 	
 
 	
-	<property name="ServerName" value="{{ getv("/sevend2d/ServerName", "My Game Host") }}" />		
-	<property name="ServerDescription" value="{{ getv("/sevend2d/ServerDescription", "A 7 Days to Die server") }}" />	
-	<property name="ServerWebsiteURL" value="{{ getv("/sevend2d/ServerWebsiteURL", "") }}" />					
-	<property name="ServerPassword" value="{{ getv("/sevend2d/ServerPassword", "") }}" />					
-	<property name="ServerLoginConfirmationText" value="{{ getv("/sevend2d/ServerLoginConfirmationText", "") }}" />					
+	<property name="ServerName" value="{{ getv("/sevend2d/servername", "My Game Host") }}" />		
+	<property name="ServerDescription" value="{{ getv("/sevend2d/serverdescription", "A 7 Days to Die server") }}" />	
+	<property name="ServerWebsiteURL" value="{{ getv("/sevend2d/serverwebsiteurl", "") }}" />					
+	<property name="ServerPassword" value="{{ getv("/sevend2d/serverpassword", "") }}" />					
+	<property name="ServerLoginConfirmationText" value="{{ getv("/sevend2d/serverloginconfirmationtext", "") }}" />					
 
 	
-	<property name="ServerPort" value="{{ getv("/sevend2d/ServerPort", "26900") }}" />				
-	<property name="ServerVisibility" value="{{ getv("/sevend2d/ServerVisibility", "2") }}" />					
-	<property name="ServerDisabledNetworkProtocols" value="{{ getv("/sevend2d/ServerDisabledNetworkProtocols", "SteamNetworking") }}" />	
-	<property name="ServerMaxWorldTransferSpeedKiBs" value="{{ getv("/sevend2d/ServerMaxWorldTransferSpeedKiBs", "512") }}" />				
+	<property name="ServerPort" value="{{ getv("/sevend2d/serverport", "26900") }}" />				
+	<property name="ServerVisibility" value="{{ getv("/sevend2d/servervisibility", "2") }}" />					
+	<property name="ServerDisabledNetworkProtocols" value="{{ getv("/sevend2d/serverdisablednetworkprotocols", "SteamNetworking") }}" />	
+	<property name="ServerMaxWorldTransferSpeedKiBs" value="{{ getv("/sevend2d/servermaxworldtransferspeedkibs", "512") }}" />				
 
 	
-	<property name="ServerMaxPlayerCount" value="{{ getv("/sevend2d/ServerMaxPlayerCount", "8") }}" />					
-	<property name="ServerReservedSlots" value="{{ getv("/sevend2d/ServerReservedSlots", "0") }}" />					
-	<property name="ServerReservedSlotsPermission" value="{{ getv("/sevend2d/ServerReservedSlotsPermission", "100") }}" />				
-	<property name="ServerAdminSlots" value="{{ getv("/sevend2d/ServerAdminSlots", "0") }}" />					
-	<property name="ServerAdminSlotsPermission" value="{{ getv("/sevend2d/ServerAdminSlotsPermission", "0") }}" />					
+	<property name="ServerMaxPlayerCount" value="{{ getv("/sevend2d/servermaxplayercount", "8") }}" />					
+	<property name="ServerReservedSlots" value="{{ getv("/sevend2d/serverreservedslots", "0") }}" />					
+	<property name="ServerReservedSlotsPermission" value="{{ getv("/sevend2d/serverreservedslotspermission", "100") }}" />				
+	<property name="ServerAdminSlots" value="{{ getv("/sevend2d/serveradminslots", "0") }}" />					
+	<property name="ServerAdminSlotsPermission" value="{{ getv("/sevend2d/serveradminslotspermission", "0") }}" />					
 
 	
-	<property name="ControlPanelEnabled" value="{{ getv("/sevend2d/ControlPanelEnabled", "false") }}" />				
-	<property name="ControlPanelPort" value="{{ getv("/sevend2d/ControlPanelPort", "8080") }}" />				
-	<property name="ControlPanelPassword" value="{{ getv("/sevend2d/ControlPanelPassword", "CHANGEME") }}" />			
+	<property name="ControlPanelEnabled" value="{{ getv("/sevend2d/controlpanelenabled", "false") }}" />				
+	<property name="ControlPanelPort" value="{{ getv("/sevend2d/controlpanelport", "8080") }}" />				
+	<property name="ControlPanelPassword" value="{{ getv("/sevend2d/controlpanelpassword", "CHANGEME") }}" />			
 
-	<property name="TelnetEnabled" value="{{ getv("/sevend2d/TelnetEnabled", "true") }}" />				
-	<property name="TelnetPort" value="{{ getv("/sevend2d/TelnetPort", "8081") }}" />				
-	<property name="TelnetPassword" value="{{ getv("/sevend2d/TelnetPassword", "") }}" />					
-	<property name="TelnetFailedLoginLimit" value="{{ getv("/sevend2d/TelnetFailedLoginLimit", "10") }}" />				
-	<property name="TelnetFailedLoginsBlocktime" value="{{ getv("/sevend2d/TelnetFailedLoginsBlocktime", "10") }}" />				
+	<property name="TelnetEnabled" value="{{ getv("/sevend2d/telnetenabled", "true") }}" />				
+	<property name="TelnetPort" value="{{ getv("/sevend2d/telnetport", "8081") }}" />				
+	<property name="TelnetPassword" value="{{ getv("/sevend2d/telnetpassword", "") }}" />					
+	<property name="TelnetFailedLoginLimit" value="{{ getv("/sevend2d/telnetfailedloginlimit", "10") }}" />				
+	<property name="TelnetFailedLoginsBlocktime" value="{{ getv("/sevend2d/telnetfailedloginsblocktime", "10") }}" />				
 
-	<property name="TerminalWindowEnabled" value="{{ getv("/sevend2d/TerminalWindowEnabled", "true") }}" />				
+	<property name="TerminalWindowEnabled" value="{{ getv("/sevend2d/terminalwindowenabled", "true") }}" />				
 
 	
-	<property name="AdminFileName" value="{{ getv("/sevend2d/AdminFileName", "serveradmin.xml") }}" />	
+	<property name="AdminFileName" value="{{ getv("/sevend2d/adminfilename", "serveradmin.xml") }}" />	
 		
 		
 
 	
-	<property name="EACEnabled" value="{{ getv("/sevend2d/EACEnabled", "true") }}" />				
-	<property name="HideCommandExecutionLog" value="{{ getv("/sevend2d/HideCommandExecutionLog", "0") }}" />					
-	<property name="MaxUncoveredMapChunksPerPlayer" value="{{ getv("/sevend2d/MaxUncoveredMapChunksPerPlayer", "131072") }}" />			
-	<property name="PersistentPlayerProfiles" value="{{ getv("/sevend2d/PersistentPlayerProfiles", "false") }}" />			
+	<property name="EACEnabled" value="{{ getv("/sevend2d/eacenabled", "true") }}" />				
+	<property name="HideCommandExecutionLog" value="{{ getv("/sevend2d/hidecommandexecutionlog", "0") }}" />					
+	<property name="MaxUncoveredMapChunksPerPlayer" value="{{ getv("/sevend2d/maxuncoveredmapchunksperplayer", "131072") }}" />			
+	<property name="PersistentPlayerProfiles" value="{{ getv("/sevend2d/persistentplayerprofiles", "false") }}" />			
 
 
 
 	
 	
 	
-	<property name="GameWorld" value="{{ getv("/sevend2d/GameWorld", "Navezgane") }}" />			
-	<property name="WorldGenSeed" value="{{ getv("/sevend2d/WorldGenSeed", "asdf") }}" />				
-	<property name="WorldGenSize" value="{{ getv("/sevend2d/WorldGenSize", "4096") }}" />				
-	<property name="GameName" value="{{ getv("/sevend2d/GameName", "My Game") }}" />			
-	<property name="GameMode" value="{{ getv("/sevend2d/GameMode", "GameModeSurvival") }}" />	
+	<property name="GameWorld" value="{{ getv("/sevend2d/gameworld", "Navezgane") }}" />			
+	<property name="WorldGenSeed" value="{{ getv("/sevend2d/worldgenseed", "asdf") }}" />				
+	<property name="WorldGenSize" value="{{ getv("/sevend2d/worldgensize", "4096") }}" />				
+	<property name="GameName" value="{{ getv("/sevend2d/gamename", "My Game") }}" />			
+	<property name="GameMode" value="{{ getv("/sevend2d/gamemode", "GameModeSurvival") }}" />	
 
 	
-	<property name="GameDifficulty" value="{{ getv("/sevend2d/GameDifficulty", "2") }}" />					
-	<property name="BlockDamagePlayer" value="{{ getv("/sevend2d/BlockDamagePlayer", "100") }}" />				
-	<property name="BlockDamageAI" value="{{ getv("/sevend2d/BlockDamageAI", "100") }}" />				
-	<property name="BlockDamageAIBM" value="{{ getv("/sevend2d/BlockDamageAIBM", "100") }}" />				
-	<property name="XPMultiplier" value="{{ getv("/sevend2d/XPMultiplier", "100") }}" />				
-	<property name="PlayerSafeZoneLevel" value="{{ getv("/sevend2d/PlayerSafeZoneLevel", "5") }}" />				
-	<property name="PlayerSafeZoneHours" value="{{ getv("/sevend2d/PlayerSafeZoneHours", "5") }}" />				
+	<property name="GameDifficulty" value="{{ getv("/sevend2d/gamedifficulty", "2") }}" />					
+	<property name="BlockDamagePlayer" value="{{ getv("/sevend2d/blockdamageplayer", "100") }}" />				
+	<property name="BlockDamageAI" value="{{ getv("/sevend2d/blockdamageai", "100") }}" />				
+	<property name="BlockDamageAIBM" value="{{ getv("/sevend2d/blockdamageaibm", "100") }}" />				
+	<property name="XPMultiplier" value="{{ getv("/sevend2d/xpmultiplier", "100") }}" />				
+	<property name="PlayerSafeZoneLevel" value="{{ getv("/sevend2d/playersafezonelevel", "5") }}" />				
+	<property name="PlayerSafeZoneHours" value="{{ getv("/sevend2d/playersafezonehours", "5") }}" />				
 
 	
-	<property name="BuildCreate" value="{{ getv("/sevend2d/BuildCreate", "false") }}" />			
-	<property name="DayNightLength" value="{{ getv("/sevend2d/DayNightLength", "60") }}" />				
-	<property name="DayLightLength" value="{{ getv("/sevend2d/DayLightLength", "18") }}" />				
-	<property name="DropOnDeath" value="{{ getv("/sevend2d/DropOnDeath", "1") }}" />				
-	<property name="DropOnQuit" value="{{ getv("/sevend2d/DropOnQuit", "0") }}" />				
-	<property name="BedrollDeadZoneSize" value="{{ getv("/sevend2d/BedrollDeadZoneSize", "15") }}" />				
-	<property name="BedrollExpiryTime" value="{{ getv("/sevend2d/BedrollExpiryTime", "45") }}" />				
+	<property name="BuildCreate" value="{{ getv("/sevend2d/buildcreate", "false") }}" />			
+	<property name="DayNightLength" value="{{ getv("/sevend2d/daynightlength", "60") }}" />				
+	<property name="DayLightLength" value="{{ getv("/sevend2d/daylightlength", "18") }}" />				
+	<property name="DropOnDeath" value="{{ getv("/sevend2d/dropondeath", "1") }}" />				
+	<property name="DropOnQuit" value="{{ getv("/sevend2d/droponquit", "0") }}" />				
+	<property name="BedrollDeadZoneSize" value="{{ getv("/sevend2d/bedrolldeadzonesize", "15") }}" />				
+	<property name="BedrollExpiryTime" value="{{ getv("/sevend2d/bedrollexpirytime", "45") }}" />				
 
 	
-	<property name="MaxSpawnedZombies" value="{{ getv("/sevend2d/MaxSpawnedZombies", "64") }}" />				
-	<property name="MaxSpawnedAnimals" value="{{ getv("/sevend2d/MaxSpawnedAnimals", "50") }}" />				
-	<property name="ServerMaxAllowedViewDistance" value="{{ getv("/sevend2d/ServerMaxAllowedViewDistance", "12") }}" />				
+	<property name="MaxSpawnedZombies" value="{{ getv("/sevend2d/maxspawnedzombies", "64") }}" />				
+	<property name="MaxSpawnedAnimals" value="{{ getv("/sevend2d/maxspawnedanimals", "50") }}" />				
+	<property name="ServerMaxAllowedViewDistance" value="{{ getv("/sevend2d/servermaxallowedviewdistance", "12") }}" />				
 
 	
-	<property name="EnemySpawnMode" value="{{ getv("/sevend2d/EnemySpawnMode", "true") }}" />				
-	<property name="EnemyDifficulty" value="{{ getv("/sevend2d/EnemyDifficulty", "0") }}" />				
-	<property name="ZombieMove" value="{{ getv("/sevend2d/ZombieMove", "0") }}" />				
-	<property name="ZombieMoveNight" value="{{ getv("/sevend2d/ZombieMoveNight", "3") }}" />				
-	<property name="ZombieFeralMove" value="{{ getv("/sevend2d/ZombieFeralMove", "3") }}" />				
-	<property name="ZombieBMMove" value="{{ getv("/sevend2d/ZombieBMMove", "3") }}" />				
-	<property name="BloodMoonFrequency" value="{{ getv("/sevend2d/BloodMoonFrequency", "7") }}" />				
-	<property name="BloodMoonRange" value="{{ getv("/sevend2d/BloodMoonRange", "0") }}" />				
-	<property name="BloodMoonWarning" value="{{ getv("/sevend2d/BloodMoonWarning", "8") }}" />				
-	<property name="BloodMoonEnemyCount" value="{{ getv("/sevend2d/BloodMoonEnemyCount", "8") }}" />				
+	<property name="EnemySpawnMode" value="{{ getv("/sevend2d/enemyspawnmode", "true") }}" />				
+	<property name="EnemyDifficulty" value="{{ getv("/sevend2d/enemydifficulty", "0") }}" />				
+	<property name="ZombieMove" value="{{ getv("/sevend2d/zombiemove", "0") }}" />				
+	<property name="ZombieMoveNight" value="{{ getv("/sevend2d/zombiemovenight", "3") }}" />				
+	<property name="ZombieFeralMove" value="{{ getv("/sevend2d/zombieferalmove", "3") }}" />				
+	<property name="ZombieBMMove" value="{{ getv("/sevend2d/zombiebmmove", "3") }}" />				
+	<property name="BloodMoonFrequency" value="{{ getv("/sevend2d/bloodmoonfrequency", "7") }}" />				
+	<property name="BloodMoonRange" value="{{ getv("/sevend2d/bloodmoonrange", "0") }}" />				
+	<property name="BloodMoonWarning" value="{{ getv("/sevend2d/bloodmoonwarning", "8") }}" />				
+	<property name="BloodMoonEnemyCount" value="{{ getv("/sevend2d/bloodmoonenemycount", "8") }}" />				
 
 	
-	<property name="LootAbundance" value="{{ getv("/sevend2d/LootAbundance", "100") }}" />				
-	<property name="LootRespawnDays" value="{{ getv("/sevend2d/LootRespawnDays", "30") }}" />				
-	<property name="AirDropFrequency" value="{{ getv("/sevend2d/AirDropFrequency", "72") }}" />				
-	<property name="AirDropMarker" value="{{ getv("/sevend2d/AirDropMarker", "false") }}" />				
+	<property name="LootAbundance" value="{{ getv("/sevend2d/lootabundance", "100") }}" />				
+	<property name="LootRespawnDays" value="{{ getv("/sevend2d/lootrespawndays", "30") }}" />				
+	<property name="AirDropFrequency" value="{{ getv("/sevend2d/airdropfrequency", "72") }}" />				
+	<property name="AirDropMarker" value="{{ getv("/sevend2d/airdropmarker", "false") }}" />				
 
 	
-	<property name="PartySharedKillRange" value="{{ getv("/sevend2d/PartySharedKillRange", "100") }}" />				
-	<property name="PlayerKillingMode" value="{{ getv("/sevend2d/PlayerKillingMode", "3") }}" />				
+	<property name="PartySharedKillRange" value="{{ getv("/sevend2d/partysharedkillrange", "100") }}" />				
+	<property name="PlayerKillingMode" value="{{ getv("/sevend2d/playerkillingmode", "3") }}" />				
 
 	
-	<property name="LandClaimCount" value="{{ getv("/sevend2d/LandClaimCount", "1") }}" />					
-	<property name="LandClaimSize" value="{{ getv("/sevend2d/LandClaimSize", "41") }}" />				
-	<property name="LandClaimDeadZone" value="{{ getv("/sevend2d/LandClaimDeadZone", "30") }}" />				
-	<property name="LandClaimExpiryTime" value="{{ getv("/sevend2d/LandClaimExpiryTime", "7") }}" />					
-	<property name="LandClaimDecayMode" value="{{ getv("/sevend2d/LandClaimDecayMode", "0") }}" />					
-	<property name="LandClaimOnlineDurabilityModifier" value="{{ getv("/sevend2d/LandClaimOnlineDurabilityModifier", "4") }}" />				
-	<property name="LandClaimOfflineDurabilityModifier" value="{{ getv("/sevend2d/LandClaimOfflineDurabilityModifier", "4") }}" />				
-	<property name="LandClaimOfflineDelay" value="{{ getv("/sevend2d/LandClaimOfflineDelay", "0") }}" />					
+	<property name="LandClaimCount" value="{{ getv("/sevend2d/landclaimcount", "1") }}" />					
+	<property name="LandClaimSize" value="{{ getv("/sevend2d/landclaimsize", "41") }}" />				
+	<property name="LandClaimDeadZone" value="{{ getv("/sevend2d/landclaimdeadzone", "30") }}" />				
+	<property name="LandClaimExpiryTime" value="{{ getv("/sevend2d/landclaimexpirytime", "7") }}" />					
+	<property name="LandClaimDecayMode" value="{{ getv("/sevend2d/landclaimdecaymode", "0") }}" />					
+	<property name="LandClaimOnlineDurabilityModifier" value="{{ getv("/sevend2d/landclaimonlinedurabilitymodifier", "4") }}" />				
+	<property name="LandClaimOfflineDurabilityModifier" value="{{ getv("/sevend2d/landclaimofflinedurabilitymodifier", "4") }}" />				
+	<property name="LandClaimOfflineDelay" value="{{ getv("/sevend2d/landclaimofflinedelay", "0") }}" />					
 
 
 	
