@@ -55,6 +55,10 @@ USER sevend2d
 WORKDIR $SEVEND2D_HOME
 VOLUME "${SEVEND2D_HOME}/server"
 
+EXPOSE 26900/tcp
+EXPOSE 26900-26902/udp
+EXPOSE 8080-8082/tcp
+
 COPY --chown=sevend2d:sevend2d files/entrypoint.sh ./
 RUN chmod +x ./entrypoint.sh
 
