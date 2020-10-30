@@ -1,44 +1,32 @@
-# minecraft-server
-Run a minecraft spigot server in a Docker container.
+# 7d2d-server
+Run a 7 Days to Die spigot server in a Docker container.
 
-Now with automated server updates and smart spigot compiling logic (see setting spigot version below).
+This uses steamCMD to automatically update your server software.
 
-[![Docker Automated build](https://img.shields.io/docker/automated/nsnow/minecraft-server.svg)](https://hub.docker.com/r/nsnow/minecraft-server)
-[![Docker Stars](https://img.shields.io/docker/stars/nsnow/minecraft-server.svg)](https://hub.docker.com/r/nsnow/minecraft-server)
-[![Docker Pulls](https://img.shields.io/docker/pulls/nsnow/minecraft-server.svg)](https://hub.docker.com/r/nsnow/minecraft-server)
-[![Docker Build Status](https://img.shields.io/docker/build/nsnow/minecraft-server.svg)](https://hub.docker.com/r/nsnow/minecraft-server/builds)
+[![Docker Automated build](https://img.shields.io/docker/automated/nsnow/7d2d-server.svg)](https://hub.docker.com/r/nsnow/7d2d-server)
+[![Docker Stars](https://img.shields.io/docker/stars/nsnow/7d2d-server.svg)](https://hub.docker.com/r/nsnow/7d2d-server)
+[![Docker Pulls](https://img.shields.io/docker/pulls/nsnow/7d2d-server.svg)](https://hub.docker.com/r/nsnow/7d2d-server)
+[![Docker Build Status](https://img.shields.io/docker/build/nsnow/7d2d-server.svg)](https://hub.docker.com/r/nsnow/7d2d-server/builds)
 
 
-This Dockerfile will download the Minecraft Server app and set it up, along with its dependencies.
+This Dockerfile will download the 7 Days to Die Server app and set it up, along with its dependencies.
 
-If you run the container as is, the `worlds` directory will be created inside the container, which is inadvisable.
-It is highly recommended that you store your worlds outside the container using a mount (see the example below).
+If you run the container as is, the `game` directory will be created inside the container, which is inadvisable.
+It is highly recommended that you store your game files outside the container using a mount (see the example below).
 Ensure that your file system permissions are correct, `chown 1000:1000 mount/path`, and/or modify the UID/GUID variables as needed (see below).
 
-It is also likely that you will want to customize your `server.properties` file.
-To do this, use the `-e <ENVIRONMENT_VARIABLE>=<value>` for each setting in the `server.properties`.
-The `server.properties` file will be overwritten every time the container is launched. See below for details.
+It is also likely that you will want to customize your `serverconfig.xml` file.
+To do this, use the `-e <ENVIRONMENT_VARIABLE>=<value>` for each setting in the `serverconfig.xml`.
+The `serverconfig.xml` file will be overwritten every time the container is launched. See below for details.
 
 
 ## Run the server
 
-Use this `docker run` command to launch a container with a few customized `server.properties`.
+Use this `docker run` command to launch a container with a few customized `serverconfig.xml`.
 
 ```
-docker run -d -it --name=minecraft -v /opt/minecraft/world1:/home/minecraft/server -p 25565:25565/udp -p 25565:25565/tcp \
-  -e "MINECRAFT_ONLINE-MODE": "true" \
-  -e "MINECRAFT_ALLOW-FLIGHT": "true" \
-  -e "MINECRAFT_DIFFICULTY": "normal" \
-  -e "MINECRAFT_LEVEL-NAME": "minecraft" \
-  -e "MINECRAFT_LEVEL-TYPE": "amplified" \
-  -e "MINECRAFT_MAX-BUILD-HEIGHT": "1024" \
-  -e "MINECRAFT_MOTD": "Welcome to my minecraft server" \
-  -e "MINECRAFT_PLAYER-IDLE-TIMEOUT": "60" \
-  -e "MINECRAFT_PVP": "false" \
-  -e "MINECRAFT_EULA": "TRUE" \
-  -e "SPIGOT_VERSION": "1.16.3" \
-  -e "JAVA_MEMORY": "1024" \
-  nsnow/minecraft-server:latest
+docker run -d -it --name=sevend2d -v /opt/sevend2d/world1:/home/sevend2d/server -p  \
+  nsnow/7d2d-server:latest
 ```
 
 
@@ -50,19 +38,19 @@ docker run -d -it --name=minecraft -v /opt/minecraft/world1:/home/minecraft/serv
 
 **docker logs**
 
-`docker logs minecraft`
+`docker logs -f sevend2d`
 
-**attach to the minecraft server console**
+**attach to the sevend2d server console**
 
 You don't need any rcon nonsense with docker attach!
 
 Use `ctrl+p` then `ctrl+q` to quit.
 
-`docker attach minecraft`
+`docker attach sevend2d`
 
 **exec into the container's bash console**
 
-`docker exec minecraft bash`
+`docker exec sevend2d bash`
 
 
 **NOTE**: referencing containers by name is only possible if you specify the `--name` flag in your docker run command.
@@ -75,42 +63,24 @@ Use `ctrl+p` then `ctrl+q` to quit.
 
 ## Server properties and environment variables
 
-**Override the minecraft server version**
-
-By default restarting the container will pull down the latest version.
-However, **you should version pin your spigot version**, use the following environment variable override.
-
-If you don't set a version, it can't know which version you want and will compile spigot from scratch each time.
-**This will drastically increase your container start times**.
-
-To update, simply set the new version number and restart your container!
-
-* `SPIGOT_VERSION=latest`
-
-or
-
-* `SPIGOT_VERSION=1.16.3`
-
-**NOTE:** See [BuildTools Install Docs](https://www.spigotmc.org/wiki/buildtools/#versions) for versioning info.
-
 **Set user and/or group id (optional)**
-* `MINECRAFT_UID=1000`
-* `MINECRAFT_GUID=1000`
+* `SEVEND2D_UID=1000`
+* `SEVEND2D_GUID=1000`
 
-### server.properties
-Use [this file](https://github.com/japtain-cack/minecraft-server/blob/master/remco/templates/server.properties) for the full environment variable reference.
+### serverconfig.xml
+Use [this file](https://github.com/japtain-cack/7d2d-server/blob/master/remco/templates/serverconfig.xml) for the full environment variable reference.
  
 This project uses [Remco config management](https://github.com/HeavyHorst/remco).
 This allows for templatization of config files and options can be set using environment variables.
 This allows for easier deployments using most docker orchistration/management platforms including Kubernetes.
 
-The remco tempate uses keys. This means you should see a string like `"/minecraft/some-option"` within the `getv()` function.
+The remco tempate uses keys. This means you should see a string like `"/sevend2d/some-option"` within the `getv()` function.
 This directly maps to a environment variable, the `/` becomes an underscore basically. The other value in the `getv()` function is the default value.
-For instance, `"/minecraft/some-option"` will map to the environment variable `MINECRAFT_SOME-OPTION`.
+For instance, `"/sevend2d/some-option"` will map to the environment variable `SEVEND2D_SOME-OPTION`.
 
-`getv("/minecraft/some-option", "default-value")`
+`getv("/sevend2d/some-option", "default-value")`
 
 becomes
 
-`docker run -e MINECRAFT_SOME-OPTION=my-value ...`
+`docker run -e SEVEND2D_SOME-OPTION=my-value ...`
 
