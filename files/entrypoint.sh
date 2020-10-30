@@ -9,18 +9,17 @@ echo
 sudo chown -R sevend2d:sevend2d ${SEVEND2D_HOME}
 
 cat <<EOF> ${SEVEND2D_HOME}/sevend2d.conf
+@ShutdownOnFailedCommand 1 //set to 0 if updating multiple servers at once
+@NoPromptForPassword 1
 login anonymous
 force_install_dir ${SEVEND2D_HOME}/server/
 app_update 294420
 quit
 EOF
 
-ls -la ${SEVEND2D_HOME}
+remco
 
-which steamcmd
-
-cat ${SEVEND2D_HOME}/sevend2d.conf | steamcmd
-
-cd ${SEVEND2D_HOME}/server/7daysded
-./startserver.sh
+cd ${SEVEND2D_HOME}/server/
+sudo steamcmd +runscript ${SEVEND2D_HOME}/sevend2d.conf
+./startserver.sh -configfile=serverconfig.xml
 

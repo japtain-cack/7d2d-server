@@ -1,0 +1,6 @@
+[[template]]
+  src = "${REMCO_TEMPLATE_DIR}/serverconfig.xml"
+  dst = "${SEVEND2D_HOME}/server/serverconfig.xml"
+  make_directories = true
+  mode = "0644"
+

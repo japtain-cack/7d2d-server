@@ -13,7 +13,7 @@ RUN go install github.com/HeavyHorst/remco/cmd/remco
 
 # Build base container
 ######################
-FROM ubuntu:bionic
+FROM steamcmd/steamcmd AS steamcmd
 LABEL author="Nathan Snow"
 LABEL description="7 Days to Die dedicated server"
 USER root
@@ -27,9 +27,6 @@ ENV SEVEND2D_HOME=/home/sevend2d
 ENV SEVEND2D_UID=1000
 ENV SEVEND2D_GUID=1000
 
-RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ bionic multiverse' | tee /etc/apt/sources.list.d/multiverse.list && \
-    dpkg --add-architecture i386
-
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y install \
     sudo \
     unzip \
@@ -39,7 +36,7 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get -y install \
     gnupg2
 
 RUN groupadd -g $SEVEND2D_GUID sevend2d && \
-    useradd -s /bin/bash -d /home/sevend2d -m -u $SEVEND2D_UID -g sevend2d sevend2d && \
+    useradd -s /bin/bash -d $SEVEND2D_HOME -m -u $SEVEND2D_UID -g sevend2d sevend2d && \
     passwd -d sevend2d && \
     echo "sevend2d ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/sevend2d
 
@@ -52,11 +49,11 @@ RUN wget -O /tini https://github.com/krallin/tini/releases/download/${TINI_VERSI
 
 COPY --from=remco /go/bin/remco /usr/local/bin/remco
 COPY --chown=sevend2d:root remco /etc/remco
-RUN chmod -R 0775 etc/remco
+RUN chmod -R 0775 /etc/remco
 
 USER sevend2d
 WORKDIR $SEVEND2D_HOME
-VOLUME ["/home/sevend2d/server"]
+VOLUME "${SEVEND2D_HOME}/server"
 
 COPY --chown=sevend2d:sevend2d files/entrypoint.sh ./
 RUN chmod +x ./entrypoint.sh
