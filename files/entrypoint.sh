@@ -27,5 +27,5 @@ echo #####################################
 echo starting server...
 echo
 
-./startserver.sh -configfile=serverconfig.xml
+sudo ./startserver.sh -configfile=serverconfig.xml
 
