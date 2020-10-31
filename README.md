@@ -40,6 +40,10 @@ docker run -d -it --name=sevend2d -v /opt/sevend2d/world1:/home/sevend2d/server 
 
 `docker logs -f sevend2d`
 
+**server logs**
+
+`tail -f /mnt/docker/sevend2d/world1/7DaysToDieServer_Data/output_log_*`
+
 **attach to the sevend2d server console**
 
 You don't need any rcon nonsense with docker attach!
