@@ -23,9 +23,11 @@ The `serverconfig.xml` file will be overwritten every time the container is laun
 ## Run the server
 
 Use this `docker run` command to launch a container with a few customized `serverconfig.xml`.
+Replace `<ENVIRONMENT_VARIABLE>=<VALUE>` with the appropriate values (see section "Server properties and environment variables" below).
 
 ```
-docker run -d -it --name=sevend2d -v /opt/sevend2d/world1:/home/sevend2d/server -p  \
+docker run -d -it --name=sevend2d -v /opt/sevend2d/world1:/home/sevend2d/server -p 26900:26900/tcp -p 26900:26902/udp \
+  -e <ENVIRONMENT_VARIABLE>=<VALUE> \
   nsnow/7d2d-server:latest
 ```
 
