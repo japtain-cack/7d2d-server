@@ -53,6 +53,7 @@ RUN chmod -R 0775 /etc/remco
 USER sevend2d
 WORKDIR $SEVEND2D_HOME
 VOLUME "${SEVEND2D_HOME}/server"
+VOLUME "${SEVEND2D_HOME}/.local/share/7DaysToDie"
 
 EXPOSE 26900/tcp
 EXPOSE 26900-26902/udp
