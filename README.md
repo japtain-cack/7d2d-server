@@ -26,7 +26,11 @@ Use this `docker run` command to launch a container with a few customized `serve
 Replace `<ENVIRONMENT_VARIABLE>=<VALUE>` with the appropriate values (see section "Server properties and environment variables" below).
 
 ```
-docker run -d -it --name=sevend2d -v /opt/sevend2d/world1:/home/sevend2d/server -p 26900:26900/tcp -p 26900:26902/udp \
+docker run -d -it --name=sevend2d \
+  -v /opt/sevend2d/world1/data:/home/sevend2d/server \
+  -v /opt/sevend2d/world1/saves:/home/sevend2d/.local/share/7DaysToDie/Saves \
+  -p 26900:26900/tcp \
+  -p 26900:26902/udp \
   -e <ENVIRONMENT_VARIABLE>=<VALUE> \
   nsnow/7d2d-server:latest
 ```
