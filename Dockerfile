@@ -5,11 +5,8 @@ FROM golang AS remco
 ENV REMCO_VERSION v0.12.0
 
 # remco (lightweight configuration management tool) https://github.com/HeavyHorst/remco
-RUN go get github.com/HeavyHorst/remco/cmd/remco
-RUN cd $GOPATH/src/github.com/HeavyHorst/remco && \
-    git checkout ${REMCO_VERSION}
-RUN go install github.com/HeavyHorst/remco/cmd/remco
-
+RUN go get -v github.com/HeavyHorst/remco/cmd/remco
+RUN go install github.com/HeavyHorst/remco/cmd/remco@$REMCO_VERSION
 
 # Build base container
 ######################
@@ -34,7 +31,10 @@ RUN apt-get -y update && apt-get -y upgrade && apt-get -y install \
     git \
     vim \
     gnupg2 \
-    lib32gcc1
+    lib32gcc1 \
+    libglu1-mesa \
+    libxcursor1 \
+    libxrandr2
 
 RUN groupadd -g $SEVEND2D_GUID sevend2d && \
     useradd -s /bin/bash -d $SEVEND2D_HOME -m -u $SEVEND2D_UID -g sevend2d sevend2d && \
